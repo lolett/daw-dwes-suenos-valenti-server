@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Perfil</title>
+</head>
+<body class="<%= tema %>">
+  <main class="panel">
+    <h2>Zona privada · Perfil</h2>
+
+    <p><strong>Nombre:</strong> <%= usuario.nombre %></p>
+    <p><strong>Email:</strong> <%= usuario.email %></p>
+    <p><strong>Edad:</strong> <%= usuario.edad %></p>
+    <p><strong>Ciudad:</strong> <%= usuario.ciudad || '—' %></p>
+
+    <h3>Intereses</h3>
+    <% if (usuario.intereses && usuario.intereses.length) { %>
+      <ul>
+        <% usuario.intereses.forEach(i => { %>
+          <li><%= i %></li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p class="muted">Sin intereses</p>
+    <% } %>
+
+    <nav>
+      <a class="btn" href="/sesiones">Ir a sesiones</a>
+      <a class="btn" href="/preferencias">Preferencias</a>
+      <a class="btn" href="/">Inicio</a>
+    </nav>
+
+    <form action="/logout" method="POST">
+      <button class="btn danger" type="submit">Cerrar sesión</button>
+    </form>
+  </main>
+</body>
+</html>

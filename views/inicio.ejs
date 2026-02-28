@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Sueños Valenti</title>
+</head>
+<body class="<%= tema %>">
+  <header>
+    <h1>Sueños Valenti - Portal de Sesiones de Supra Conciencia.</h1>
+    <p>Sesiones grupales para conectar con tu supra conciencia.</p>
+
+    <nav>
+      <a class="btn" href="/login">Login</a>
+      <a class="btn" href="/registro">Registro</a>
+      <a class="btn" href="/preferencias">Preferencias</a>
+      <a class="btn" href="/sesiones">Sesiones</a>
+    </nav>
+
+    <img class="banner" src="/img/banner.jpg" alt="Imagen de bienvenida" />
+
+    <% if (usuario) { %>
+      <p class="ok">Sesión iniciada como <strong><%= usuario.nombre %></strong> <%= usuario.email %>.</p>
+      <form action="/logout" method="POST">
+        <button class="btn danger" type="submit">Cerrar sesión</button>
+      </form>
+    <% } %>
+  </header>
+  <footer class="footer">
+    <p><strong>Sueños Valenti</strong> · Proyecto creado por Manuel Aparicio Caballero</p>
+    <p>
+      <a href="/">Inicio</a> ·
+      <a href="/preferencias">Preferencias</a> ·
+      <a href="/sesiones">Sesiones</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Login</title>
+</head>
+<body class="<%= tema %>">
+  <main class="panel">
+    <h2>Login</h2>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form action="/login" method="POST">
+      <label>Email
+        <input type="email" name="email" />
+      </label>
+
+      <label>Contraseña
+        <input type="password" name="password" />
+      </label>
+
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+
+    <p class="muted">Contraseña: <strong>1234</strong></p>
+    <p><a href="/registro">No tengo cuenta</a> · <a href="/">Inicio</a></p>
+  </main>
+</body>
+</html>

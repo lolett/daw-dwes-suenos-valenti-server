@@ -1,0 +1,21 @@
+[
+  {
+    "nombre": "abc",
+    "email": "a@a.com",
+    "edad": 18,
+    "ciudad": "Madrid",
+    "intereses": [
+      "meditacion"
+    ]
+  },
+  {
+    "nombre": "abc1",
+    "email": "b@b.com",
+    "edad": 18,
+    "ciudad": "Madrid",
+    "intereses": [
+      "meditacion",
+      "energia"
+    ]
+  }
+]

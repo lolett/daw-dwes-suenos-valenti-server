@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Registro</title>
+</head>
+<body class="<%= tema %>">
+  <main class="panel">
+    <h2>Registro</h2>
+
+    <% if (errores && errores.length) { %>
+      <div class="error">
+        <p>Corrige estos errores:</p>
+        <ul>
+          <% errores.forEach(e => { %>
+            <li><%= e %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form action="/registro" method="POST">
+      <label>Nombre
+        <input type="text" name="nombre" value="<%= valores.nombre || '' %>" />
+      </label>
+
+      <label>Email
+        <input type="email" name="email" value="<%= valores.email || '' %>" />
+      </label>
+
+      <label>Edad
+        <input type="number" name="edad" min="1" value="<%= valores.edad || '' %>" />
+      </label>
+
+      <label>Ciudad
+        <select name="ciudad">
+          <option value="">-- Selecciona --</option>
+          <option value="Madrid" <%= valores.ciudad === 'Madrid' ? 'selected' : '' %>>Madrid</option>
+          <option value="Barcelona" <%= valores.ciudad === 'Barcelona' ? 'selected' : '' %>>Barcelona</option>
+          <option value="Valencia" <%= valores.ciudad === 'Valencia' ? 'selected' : '' %>>Valencia</option>
+          <option value="Murcia" <%= valores.ciudad === 'Murcia' ? 'selected' : '' %>>Murcia</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Intereses</legend>
+
+        <label>
+          <input type="checkbox" name="intereses" value="meditacion"
+            <%= (valores.intereses || []).includes('meditacion') ? 'checked' : '' %> />
+          Meditación
+        </label>
+
+        <label>
+          <input type="checkbox" name="intereses" value="energia"
+            <%= (valores.intereses || []).includes('energia') ? 'checked' : '' %> />
+          Energía
+        </label>
+
+        <label>
+          <input type="checkbox" name="intereses" value="crecimiento"
+            <%= (valores.intereses || []).includes('crecimiento') ? 'checked' : '' %> />
+          Crecimiento personal
+        </label>
+      </fieldset>
+
+      <button class="btn" type="submit">Crear cuenta</button>
+    </form>
+
+    <p><a href="/">Volver al inicio</a></p>
+  </main>
+</body>
+</html>

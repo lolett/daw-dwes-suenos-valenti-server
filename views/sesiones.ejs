@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Sesiones</title>
+</head>
+<body class="<%= tema %>">
+  <main class="panel">
+    <h2>Zona privada · Sesiones</h2>
+
+    <p class="muted">Hola <strong><%= usuario.nombre %></strong>. Añade sesiones a tu carrito espiritual.</p>
+
+    <h3>Sesiones disponibles</h3>
+
+    <div class="grid">
+      <% sesionesDisponibles.forEach(s => { %>
+        <div class="product">
+          <div><strong><%= s.nombre %></strong></div>
+          <div>Precio: <%= euro(s.precio) %></div>
+
+          <form action="/sesiones/add" method="POST">
+            <input type="hidden" name="id" value="<%= s.id %>" />
+            <button class="btn" type="submit">Añadir al carrito</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+
+    <h3>Tu carrito</h3>
+    <% if (carrito.length === 0) { %>
+      <p class="muted">El carrito está vacío.</p>
+    <% } else { %>
+      <ul class="lista-carrito">
+        <% carrito.forEach((item, index) => { %>
+          <li class="carrito-item">
+            <span><%= item.nombre %> — <%= euro(item.precio) %></span>
+            <form action="/sesiones/eliminar" method="POST" class="inline">
+                <input type="hidden" name="index" value="<%= index %>" />
+                <button class="btn danger" type="submit">Eliminar</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+
+      <p><strong>Total:</strong> <%= euro(total) %></p>
+
+      <form action="/sesiones/vaciar" method="POST" class="vaciar-form">
+        <button class="btn danger" type="submit">Vaciar carrito</button>
+      </form>
+    <% } %>
+
+    <nav>
+      <a class="btn" href="/perfil">Volver al perfil</a>
+      <a class="btn" href="/">Inicio</a>
+    </nav>
+  </main>
+</body>
+</html>
