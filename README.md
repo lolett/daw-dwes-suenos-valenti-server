@@ -1,2 +1,32 @@
-# daw-dwes-suenos-valenti-server
-Server side project for FP DAW 2 year. This project completes the client side project with the same name. 
+# Sueños Valenti (DWES) — Server-side Express + EJS
+
+## Author
+Manuel Aparicio
+
+## Overview
+Server-side web application developed for the **DWES (Server-side Web Development)** module.
+Built with **Node.js + Express** and **EJS** templates, including session-based behaviour.
+
+## Tech Stack
+- Node.js
+- Express
+- EJS
+- express-session (if used)
+
+## Requirements
+- Node.js 18+ recommended
+
+## Installation
+```bash
+npm install
+```
+
+## Run 
+### Production
+```bash
+npm start
+```
+### Development (auto-reload)
+```bash
+npm run dev
+```
