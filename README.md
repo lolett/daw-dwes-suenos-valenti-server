@@ -11,7 +11,7 @@ Built with **Node.js + Express** and **EJS** templates, including session-based 
 - Node.js
 - Express
 - EJS
-- express-session (if used)
+- express-session
 
 ## Requirements
 - Node.js 18+ recommended
