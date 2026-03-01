@@ -36,4 +36,4 @@ npm run dev
 
 ### Screenshots
 - Under `/screenshots`
-
+![home](screenshots/home.png)
