@@ -32,5 +32,8 @@ npm run dev
 ```
 
 ### Evidence
-- Assignment PDF: evidence/...”
-- Screenshots: /screenshots
+- Assignment PDF: evidence/DWES - Ec1.pdf
+
+### Screenshots
+- Under /screenshots
+
